@@ -1,5 +1,5 @@
-
-    function getMoveName(argMoveId){
+{
+    const getMoveName = function (argMoveId){
     if(argMoveId == 1){
       return 'kamień';
     }
@@ -11,7 +11,7 @@
     } 
   }
   
-  function displayResult(argComputerMove, argPlayerMove){
+  const displayResult = function(argComputerMove, argPlayerMove){
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   
     if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
@@ -28,13 +28,13 @@
       printMessage('Tym razem przegrywasz :(');
     }
   }
-function playGame(argPlayerMove){
+const playGame = function (argPlayerMove){
     clearMessages();
-let randomNumber = Math.floor(Math.random() * 3 + 1);
+const randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
 
-let computerMove = getMoveName(randomNumber);
+const computerMove = getMoveName(randomNumber);
 
 
 
@@ -46,3 +46,4 @@ displayResult(argPlayerMove, computerMove)
 document.querySelector('#play-rock').addEventListener('click',function(){playGame('kamień')});
 document.querySelector('#play-paper').addEventListener('click',function(){playGame('papier')});
 document.querySelector('#play-scissors').addEventListener('click',function(){playGame('nożyce')});
+}
